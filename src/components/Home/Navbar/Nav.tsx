@@ -4,7 +4,13 @@ import Link from "next/link";
 import React from "react";
 import { HiBars3BottomRight } from "react-icons/hi2";
 
-const Nav = () => {
+type props = {
+   openNav: () => void;
+};
+
+
+
+const Nav = ({openNav}: props) => {
   return (
     <div className="h-[12vh] relative z-10 lg:mt-8">
       <div className="flex items-center h-full justify-between w-[90%] xl:w-[80%] mx-auto">
@@ -28,7 +34,7 @@ const Nav = () => {
           </button>
         </div>
         {/* hamberger icon for mobile */}
-        <div className="lg:hidden">
+        <div className="lg:hidden" onClick={openNav}>
           <HiBars3BottomRight className="w-9 h-9 text-[#dfc39f] cursor-pointer" />
         </div>
       </div>
